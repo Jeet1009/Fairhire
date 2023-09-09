@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Freelancer - Start Bootstrap Theme</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+    type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+  <!-- Navigation-->
+  {% include "header.html" %}
+  
+  <!-- Masthead-->
+
+  <!-- About Section-->
+  <!-- <section class="page-section bg-primary text-white mb-0 " id="about"> -->
+  <!-- Contact Section-->
+  <section class="page-section"  style="margin-top: 100px;">
+    <div class="container">
+      <!-- Contact Section Heading-->
+     
+      <!-- Contact Section Form-->
+      <div class="row justify-content-center">
+        <div class="">
+          <!-- * * * * * * * * * * * * * * *-->
+          <!-- * * SB Forms Contact Form * *-->
+          <!-- * * * * * * * * * * * * * * *-->
+          <!-- This form is pre-integrated with SB Forms.-->
+          <!-- To make this form functional, sign up at-->
+          <!-- https://startbootstrap.com/solution/contact-forms-->
+          <!-- to get an API token!-->
+                <div class="cardHeader" style="display: flex; width: 100%; justify-content: space-between; margin-bottom: 50px;">
+                    <h2>Recent Complaints</h2>
+                    <a href="new_complaint" class="btn">Add New</a>
+                </div>
+
+                <table style="display: flex; width: 100%; justify-content: space-between; flex-wrap: wrap;">
+                    <thead style="display: flex; width: 100%; justify-content: space-between; flex-wrap: wrap; margin-bottom: 20px;">
+                        <tr style="display: flex; width: 100%; justify-content: space-between; flex-wrap: wrap;">
+                          <td style=" width: 8%; font-size: 23px;">Index</td>  
+                          <td style=" width: 23%; font-size: 25px;">Company</td>
+                            <td style=" width: 23%; font-size: 25px;">Interviewee</td>
+                            <td style=" width: 23%; font-size: 25px;">Type of discrimination</td>
+                            <td style="text-align:end; width: 23%; font-size: 25px;">Status</td>
+                            
+                        </tr>
+                    </thead>
+
+                    <tbody style="display: flex; width: 100%; justify-content: space-between; flex-wrap: wrap;">
+
+                      {% for j in context.complaints %}
+                        
+                       
+                      <tr style="display: flex; width: 100%; justify-content: space-between; flex-wrap: wrap;">
+                        <td style=" width: 8%;"> {{ forloop.counter }}</td>
+                          <td style=" width: 23%;">{{j.company}}</td>
+                          <td style=" width: 23%;">{{j.firstname}}</td>
+                          <td style=" width: 23%;">{{j.type_of_disability}}</td>
+                          <td style="text-align:end; width: 23%;"><span class="">Pending</span></td>
+                      </tr>
+                      {% endfor %}
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            
+
+          
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include "footer.html" %}
+  <!-- Portfolio Modals-->
+  <!-- Portfolio Modal 1-->
+
+  <!-- Portfolio Modal 2-->
+ 
+  <!-- Portfolio Modal 3-->
+  
+  <!-- Portfolio Modal 4-->
+  
+  <!-- Portfolio Modal 5-->
+ 
+  <!-- Portfolio Modal 6-->
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="{% static 'js/scripts.js' %}"></script>
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+  <!-- * *                               SB Forms JS                               * *-->
+  <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>
